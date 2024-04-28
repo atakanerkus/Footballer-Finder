@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footballer Finder</title>
+    <style>
+        
+        .title{
+            display: flex;
+            justify-content: center;
+        }
+        .informations{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .userInputPart{
+            display: flex;
+            justify-content: center;
+        }
+        .button{
+            background-color: red;
+        }
+        .result{
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #nextRoundButton, #getAnswerButton {
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Footballer Finder</h1>
+        <hr>
+        <ul class="informations">
+            <li>Team: <%= locals.team %></li>
+            <li>Nationality: <%= locals.nationality %></li>
+            <li>Age: <%= locals.age %></li>
+            <li>Position: <%= locals.position %></li>
+        </ul>
+        <form class="userInputPart" action="submit" method="post">
+            <label for="userInput">Enter a player name: </label>
+            <input type="text" name="userInput" id="1">
+            <button  class="button"></button>
+        </form>
+        
+        <h1 class="result"><%= locals.result%></h1>
+        <form class="userInputPart" action="next" method="get">
+            <button class="button" id="nextRoundButton">Next Round</button>
+        </form>
+        
+        <form class="userInputPart" action="answer" method="get">
+            <button class="button" id="getAnswerButton">Get Answer</button>
+        </form>
+        
+        
+       
+    </div>
+    
+</body>
+</html>
